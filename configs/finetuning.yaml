@@ -1,0 +1,10 @@
+# finetune_multitask.yaml
+dataset: 'ImageCaptioning'
+data_path: '/path/to/caption_dataset'
+batch_size: 8
+num_epochs: 30
+learning_rate: 5e-5
+loss_weights:
+  language: 1.0
+  segmentation: 0.5
+  contrastive: 0.2
