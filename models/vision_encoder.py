@@ -10,7 +10,7 @@ class SegEncoder(nn.Module):
     self.base_encoder = CLIPVisionModel.from_pretrained("openai/clip-vit-base-patch32")
     self.device = device
     
-    hidden_size = self.base_encder.config.hidden_size
+    hidden_size = self.base_encoder.config.hidden_size
     self.adapter = SegAdapter(in_channels = hidden_size, num_classes = num_seg_classes)
 
   def forward(self, pixel_values):
@@ -19,7 +19,7 @@ class SegEncoder(nn.Module):
     B, N, C = outputs.last_hidden_state.shape
 
     H = W = int(N**0.5)
-    features = outputs.last_hidden_state.traspose(1,2).reshape(B, C, H, W)
+    features = outputs.last_hidden_state.transpose(1,2).reshape(B, C, H, W)
     seg_logits = self.adapter(features)
 
     visual_embeds = features.mean(dim = [2,3])
