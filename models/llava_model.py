@@ -6,11 +6,11 @@ from .vision_encoder import SegEncoder
 from .projector import build_vision_projector
 
 class LLaVAModel(nn.Module):
-  def __init__(self, num_seg_classes, config, device = "cuda"):
+  def __init__(self, num_seg_classes, config, adapter_type = 'cnn', device = "cuda"):
     super(LLaVAModel, self).__init__()
     self.device = device
 
-    self.vision_encoder = SegEncoder(num_seg_classes = num_seg_classes, device = device)
+    self.vision_encoder = SegEncoder(num_seg_classes = num_seg_classes, adapter_type = adapter_type, device = device)
 
     self.language_model = LlavaForConditionalGeneration.from_pretrained("llava-hf/llava-1.5-7b-hf")
 
