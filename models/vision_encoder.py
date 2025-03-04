@@ -40,7 +40,7 @@ class SegEncoder(nn.Module):
       seg_probs = torch.softmax(seg_logits, dim = 1)
       seg_embeds = seg_probs.mean(dim=[2,3])
       fused_feature = torch.cat([global_feature, seg_embeds], dim = 1)
-      visual_embeds = self.fusion_proh(fused_feature)
+      visual_embeds = fused_feature
     else:
       visual_embeds = global_feature
 
