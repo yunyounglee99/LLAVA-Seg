@@ -36,7 +36,7 @@ def train_pretrain(config):
 
 if __name__ == "__main__":
   parser = argparse.ArgumentParser()
-  parser.add_argument("--config,", type = str, default = "configs/pretrain_cocostuff.yaml")
+  parser.add_argument("--config,", type = str, default = "configs/pretrain.yaml")
   args = parser.parse_args()
   config = load_config(args.config)
   train_pretrain(config)
