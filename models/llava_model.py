@@ -4,6 +4,7 @@ from transformers import LlavaForConditionalGeneration
 
 from .vision_encoder import SegEncoder
 from .projector import build_vision_projector
+import yaml
 
 class LLaVAModel(nn.Module):
   def __init__(self, num_seg_classes, config, adapter_type = 'cnn', device = "cuda", fuse = True):

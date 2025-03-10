@@ -2,7 +2,11 @@
 dataset: 'COCO-Stuff'
 data_path: '/path/to/coco_stuff'
 batch_size: 16
+num_seg_classes: 10
 num_epochs: 50
 learning_rate: 1e-4
 loss_weights:
   segmentation: 1.0
+mm_projector_type: 'linear'
+mm_hidden_size: 1024
+hidden_size: 768

@@ -1,1 +1,7 @@
 .DS_Store
+dataset/__pycache__/
+models/__pycache__/
+train/__pycache__/
+evaluation/__pycache__/
+configs/__pycache__/
+__pycache__/

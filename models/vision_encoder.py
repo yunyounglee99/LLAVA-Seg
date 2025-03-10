@@ -8,7 +8,7 @@ class SegEncoder(nn.Module):
   def __init__(self, num_seg_classes, adapter_type = 'cnn', device = "cuda", fuse = True):
     super(SegEncoder, self).__init__()
 
-    self.base_encoder = CLIPVisionModel.from_pretrained("openai/clip-vit-base-patch32")
+    self.base_encoder = CLIPVisionModel.from_pretrained("openai/clip-vit-large-patch14")
     self.device = device
     self.fuse = fuse
     self.num_seg_classes = num_seg_classes
