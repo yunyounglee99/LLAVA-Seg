@@ -22,8 +22,10 @@ class SegEncoder(nn.Module):
       raise ValueError(f"Unknown adapter type : {adapter_type}")
     
     #fusion feature : hdden_size + num_seg_classes
+    """
     if self.fuse:
       self.fusion_proj = nn.Linear(hidden_size + num_seg_classes, hidden_size) # 기존의 projector 사용가능한지 더 생각해보기
+    """
 
   def forward(self, pixel_values):
     outputs = self.base_encoder(pixel_values = pixel_values)
