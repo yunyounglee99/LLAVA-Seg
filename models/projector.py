@@ -3,6 +3,7 @@ import torch.nn as nn
 import re
 
 #Llava official code의 projector 그대로 가져옴
+#projector 구조 맞는지 잘 확인해보기
 
 class IdentityMap(nn.Module):
   def __init__(self):
