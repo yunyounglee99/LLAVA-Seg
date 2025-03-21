@@ -5,7 +5,7 @@ from .transforms import get_transforms
 
 class CocoStuffDataset(Dataset):
   def __init__(self, root, split = "train", transform = None):
-    self.root = root
+    self.root = root 
     self.split = split
     self.transform = transform or get_transforms()
     self.image_dir = os.path.join(root, "images", split)
