@@ -14,5 +14,5 @@ def get_transforms():
     image = image_transform(image)
     mask = mask_transform(mask)
     return image, mask
-  
+
   return transform_fn
