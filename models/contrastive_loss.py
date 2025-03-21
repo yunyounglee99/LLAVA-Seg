@@ -10,7 +10,7 @@ class ContrastiveLoss(nn.Module):
     self.temperature = temperature
 
   def forward(self, image_features, text_features):
-    #image_features : (B, D), text_features : (B, D)
+    #image_features : (B, D), text_features : (B, D) 
 
     image_features = F.normalize(image_features, dim = 1)
     text_features = F.normalize(text_features, dim = 1)
