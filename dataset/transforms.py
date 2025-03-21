@@ -1,7 +1,7 @@
 from torchvision import transforms
 
 def get_transforms():
-  def transform_fn(image, mask):
+  def transform_fn(image, mask): 
     image_transform = transforms.Compose([
       transforms.Resize((224, 224)),
       transforms.ToTensor(),
