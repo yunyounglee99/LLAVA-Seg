@@ -21,6 +21,6 @@ class CocoStuffDataset(Dataset):
     image = Image.open(image_path).convert("RGB")
     mask = Image.open(mask_path)
     if self.transform:
-      image, mask = self.transform(image, mask)
+      image, mask = self.transform(image, mask) 
 
     return {"image" : image, "mask" : mask}
