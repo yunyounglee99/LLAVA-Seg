@@ -14,7 +14,7 @@ class CocoStuffDataset(Dataset):
 
   def __len__(self):
     return len(self.image_files)
-  
+
   def __getitem__(self, idx):
     image_path = os.path.join(self.image_dir, self.image_files[idx])
     mask_path = os.path.join(self.mask_dir, self.image_files[idx].replace(".jpg", ".png"))
